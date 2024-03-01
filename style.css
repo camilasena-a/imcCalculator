@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: "Roboto", sans-serif;
+    font-size: 62.5%;
+    --color-background-default: #040924;
+    --color-white: #FFFFFF;
+    --color-title-text: #0C3440;
+    --color-label-text: #00453A;
+    --color-input-text: #212529;
+    --color-button: #02799D;
+    --color-button-hover: #026685;
+    --color-shadow: #0000001a;
+    --color-input-outline: #02799D;
+    --color-input-border: #4950574d;
+    --color-input-placeholder: #49505780;
+    --color-error: #F03E3E;
+    --color-background-modal: #000000b3;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--color-background-default);
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    height: min(auto, 90%);
+}
+
+.board {
+    background-color: var(--color-white);
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+    width: min(42.8rem, 90%);
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    box-shadow: 0px 2px 4px 0px var(--color-shadow);
+}
+
+.title {
+    color: var(--color-title-text);
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 3.2rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.input-wrapper label {
+    color: var(--color-label-text);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+
+.input-wrapper input {
+    padding: 1.6rem;
+    width: 100%;
+    height: 5.2rem;
+    color: var(--color-input-text);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-bottom: 1.6rem;
+    border: 0.1rem solid var(--color-input-border);
+}
+
+.input-wrapper input:focus {
+    outline: 0.2rem solid var(--color-input-outline);
+}
+
+input::placeholder {
+    color: var(--color-input-placeholder)
+}
+
+#submit-button {
+    border: none;
+    border-radius: 0.4rem;
+    color: var(--color-white);
+    margin-top: 1.6rem;
+    padding: 1.6rem;
+    width: 100%;
+    height: 5.2rem;
+    background-color: var(--color-button);
+    font-weight: 700;
+    line-height: 2rem;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+#submit-button:hover {
+    background: var(--color-button-hover);
+    cursor: pointer;
+}
+
+/* modal, pop-up */
+
+.modal-wrapper {
+    position: absolute;
+    background-color: var(--color-background-modal);
+    inset: 0;
+    /* inset: top,right,botton,left */
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+    text-align: center;
+    position: relative;
+}
+
+#close-button {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: none;
+    border: none;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    transition: all 0.3s;
+}
+
+#close-button:hover {
+    cursor: pointer;
+    filter: contrast(88%);
+    transform: scale(1.1);
+}
+
+/* alerta */
+
+.alert-wrapper {
+    background-color: var(--color-error);
+    color: var(--color-white);
+    padding: 0.8rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    animation: alert 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.alert-wrapper.open, .modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* animações */
+
+
+ @-webkit-keyframes alert {
+    0% {
+      -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+    }
+  }
+  @keyframes alert {
+    0% {
+      -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+    }
+  }
+  
+
