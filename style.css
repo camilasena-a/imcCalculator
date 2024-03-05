@@ -1,3 +1,5 @@
+/* Configurações gerais */
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +28,8 @@ body {
     font-size: 1.6rem;
     background: var(--color-background-default);
 }
+
+/* Tela Principal */
 
 .container {
     height: 100vh;
@@ -108,7 +112,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* modal, pop-up */
+/* Modal / pop-up */
 
 .modal-wrapper {
     position: absolute;
@@ -160,12 +164,7 @@ input::placeholder {
     animation: alert 0.35s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.alert-wrapper.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-wrapper.open {
+.alert-wrapper.open, .modal-wrapper.open  {
     opacity: 1;
     visibility: visible;
 }
@@ -201,5 +200,4 @@ input::placeholder {
               transform-origin: 100% 0%;
     }
   }
-  
 
